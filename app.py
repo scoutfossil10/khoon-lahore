@@ -7,11 +7,11 @@ st.title("Khoon - Lahore Blood Connect")
 st.warning("This is a student project, NOT an emergency service. For emergency, call Rescue 1122.")
 
 # Direct button to your Google Form
-FORM_URL = "https://google.com"
+FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd3krS-WmWd_lShF0ERhxWOzqUmDhXoEZpE5gnjm0FRC2UNYQ/viewform"
 st.link_button("Register as a Blood Donor", FORM_URL)
 
 # Paste your Published Google Sheet CSV URL below
-SHEET_CSV_URL = "PASTE_YOUR_GOOGLE_SHEET_CSV_URL_HERE"
+SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRNWmE82wF1xjM6mShGRd9DdSu8LHJnl1RjAZqQ-h8TR0L4k7o9IvMknZ-5t0Ra9onsAC9KOPXzHuFE/pub?gid=302994287&single=true&output=csv"
 
 # Blood compatibility chart (Recipient : [Compatible Donor Blood Groups])
 COMPATIBILITY = {
