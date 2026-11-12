@@ -47,6 +47,9 @@ COL_PHONE = "WhatsApp Number:"
 COL_CONSENT = "Do you agree to register?"
 
 donors = load_donors()
+st.write("Total rows loaded:", len(donors))
+st.write("First row data:", donors[0] if donors else "EMPTY")
+
 safe_donors = []
 
 for d in donors:
