@@ -1,6 +1,8 @@
 import streamlit as st
-import pandas as pd
+import urllib.request
 import urllib.parse
+import csv
+import io
 
 st.set_page_config(page_title="Khoon - Lahore Blood Connect", page_icon="🩸")
 st.title("Khoon - Lahore Blood Connect")
@@ -10,7 +12,7 @@ st.warning("This is a student project, NOT an emergency service. For emergency, 
 FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd3krS-WmWd_lShF0ERhxWOzqUmDhXoEZpE5gnjm0FRC2UNYQ/viewform"
 st.link_button("Register as a Blood Donor", FORM_URL)
 
-# Paste your Published Google Sheet CSV URL below
+# Paste your Published Google Sheet CSV URL below (must end with output=csv)
 SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRNWmE82wF1xjM6mShGRd9DdSu8LHJnl1RjAZqQ-h8TR0L4k7o9IvMknZ-5t0Ra9onsAC9KOPXzHuFE/pub?gid=302994287&single=true&output=csv"
 
 # Blood compatibility chart (Recipient : [Compatible Donor Blood Groups])
@@ -28,8 +30,10 @@ COMPATIBILITY = {
 @st.cache_data(ttl=60)
 def load_donors():
     if SHEET_CSV_URL.startswith("http"):
-        df = pd.read_csv(SHEET_CSV_URL)
-        return df.fillna("").to_dict(orient="records")
+        response = urllib.request.urlopen(SHEET_CSV_URL)
+        lines = response.read().decode("utf-8")
+        reader = csv.DictReader(io.StringIO(lines))
+        return list(reader)
     return []
 
 # Exact question headers from your Google Form
@@ -51,7 +55,9 @@ for d in donors:
     has_consent = str(d.get(COL_CONSENT, "")).strip().lower() == "yes"
     last_don = str(d.get(COL_LAST, "")).strip()
     is_safe_time = last_don in ["Never", "More than 3 months ago"]
-    is_approved = str(d.get("Approved", "")).strip().lower() == "yes"
+    # Works whether your column is named Approved or APPROVED
+    approved_val = d.get("Approved") or d.get("APPROVED") or ""
+    is_approved = str(approved_val).strip().lower() == "yes"
 
     if is_18 and is_willing and has_consent and is_safe_time and is_approved:
         safe_donors.append(d)
