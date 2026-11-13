@@ -93,4 +93,4 @@ if st.button("Search Donors"):
                 f"Assalam-o-Alaikum {d['Name']}, I found your contact on Khoon Lahore Blood Connect. "
                 f"We need {blood} blood in {area}."
             )
-            st.link_button(f"WhatsApp {d['Name']}", f"https://wa.me{phone}?text={msg}")
+            st.link_button(f"WhatsApp {d['Name']}", f"https://wa.me/{phone}?text={msg}")
