@@ -13,7 +13,8 @@ FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd3krS-WmWd_lShF0ERhxWOzqUm
 st.link_button("Register as a Blood Donor", FORM_URL)
 
 # Paste your Published Google Sheet CSV URL below
-SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRNWmE82wF1xjM6mShGRd9DdSu8LHJnl1RjAZqQ-h8TR0L4k7o9IvMknZ-5t0Ra9onsAC9KOPXzHuFE/pub?gid=302994287&single=true&output=csv"
+SHEET_CSV_URL = SHEET_CSV_URL = st.secrets["SHEET_CSV_URL"]
+
 
 # Blood compatibility chart (Recipient : [Compatible Donor Blood Groups])
 COMPATIBILITY = {
