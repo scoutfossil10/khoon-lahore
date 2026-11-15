@@ -11,6 +11,11 @@ st.warning("To get yourself removed message +923344448421")
 # Direct button to your Google Form
 FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd3krS-WmWd_lShF0ERhxWOzqUmDhXoEZpE5gnjm0FRC2UNYQ/viewform"
 st.link_button("Register as a Blood Donor", FORM_URL)
+st.link_button(
+    "Request Donor Removal",
+    "mailto:khoonlahore.support@://gmail.com"
+)
+
 
 # Paste your Published Google Sheet CSV URL below
 SHEET_CSV_URL = st.secrets["SHEET_CSV_URL"]
