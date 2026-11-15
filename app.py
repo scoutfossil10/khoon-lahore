@@ -11,10 +11,7 @@ st.warning("This is a student project, NOT an emergency service. For emergency, 
 # Direct button to your Google Form
 FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd3krS-WmWd_lShF0ERhxWOzqUmDhXoEZpE5gnjm0FRC2UNYQ/viewform"
 st.link_button("Register as a Blood Donor", FORM_URL)
-st.link_button(
-    "Request Donor Removal",
-    "https://google.com"
-)
+
 
 st.caption("To update or remove your donor listing, email your Name & WhatsApp Number to **khoonlahore.support@gmail.com**")
 
