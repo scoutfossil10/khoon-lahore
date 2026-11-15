@@ -7,7 +7,7 @@ import io
 st.set_page_config(page_title="Khoon - Lahore Blood Connect", page_icon="🩸")
 st.title("Khoon - Lahore Blood Connect")
 st.warning("This is a student project, NOT an emergency service. For emergency, call Rescue 1122.")
-st.warning("To get yourself removed message +923344448421")
+
 # Direct button to your Google Form
 FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd3krS-WmWd_lShF0ERhxWOzqUmDhXoEZpE5gnjm0FRC2UNYQ/viewform"
 st.link_button("Register as a Blood Donor", FORM_URL)
