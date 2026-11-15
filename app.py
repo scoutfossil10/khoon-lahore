@@ -16,6 +16,7 @@ st.link_button(
     "https://google.com"
 )
 
+st.caption("To update or remove your donor listing, email your Name & WhatsApp Number to **khoonlahore.support@gmail.com**")
 
 
 
