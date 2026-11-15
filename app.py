@@ -11,10 +11,11 @@ st.warning("This is a student project, NOT an emergency service. For emergency, 
 # Direct button to your Google Form
 FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd3krS-WmWd_lShF0ERhxWOzqUmDhXoEZpE5gnjm0FRC2UNYQ/viewform"
 st.link_button("Register as a Blood Donor", FORM_URL)
-st.link_button(
-    "Request Donor Removal",
-    "mailto:khoonlahore.support@://gmail.com"
+st.markdown(
+    "Need to remove your listing? [Click here to email us](mailto:khoonlahore.support@://gmail.com) "
+    "or send your Name & Number to **`khoonlahore.support@gmail.com`**."
 )
+
 
 
 # Paste your Published Google Sheet CSV URL below
